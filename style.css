@@ -1,0 +1,25 @@
+body {
+min-height: 50vh;
+margin-top: 20vh;
+display: flex;
+justify-content: center;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    height: 65vh;
+    width: 90vh;
+}
+
+
+.startcard{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding-bottom: 20%;
+text-align: center;
+}
+
