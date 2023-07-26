@@ -47,3 +47,6 @@ var questions = [
 
 
 ]
+
+var questionEl = document.getElementById("question")
+var answerButton = document.getElementById("answer-btns")
