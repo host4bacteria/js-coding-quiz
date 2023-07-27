@@ -48,5 +48,38 @@ var questions = [
 
 ]
 
-var questionEl = document.getElementById("question")
-var answerButton = document.getElementById("answer-btns")
+// document.getElementById("startbtn").addEventListener("click", myFunction);
+
+// var countDownSec = 75;
+// var timer = document.getElementById('timer');
+// var interval;
+
+// function myFunction() {
+//   // add html for timer
+//   timer.innerText = "Time:" + countDownSec
+//   document.getElementsByClassName("card")[0].prepend(timer)
+//   interval = setInterval(setTime, 1000);
+//    // start timer
+//   // display question
+// }
+
+
+// var questionEl = document.getElementById("question")
+// var answerButton = document.getElementById("answer-btns")
+
+
+// var currentQuestionIndex = 0;
+// var score = 0;
+
+
+
+// function setTime() {
+//     timer.innerText = "Time:" + countDownSec
+//    countDownSec--;
+//    if(countDownSec === 0) {
+//     clearInterval(interval);
+//    }
+// }  
+
+// // countDownSec = countDownSec - 10;
+// // countDownSec -= 10
