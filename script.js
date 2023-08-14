@@ -1,4 +1,14 @@
-var questions = [
+// selecting required html elements
+const startBtn = document.getElementById("startbtn");
+const questContainer = document.getElementById("questTemp");
+const questEl = document.getElementById("question");
+const answerbtn = document.getElementById("answer-btns");
+const startTemp = document.querySelector('.startCard')
+
+
+
+// array containing questions
+let questions = [
 {
     question: "Commonly used data types DO NOT include:",
     answers: [
@@ -48,38 +58,28 @@ var questions = [
 
 ]
 
-// document.getElementById("startbtn").addEventListener("click", myFunction);
+// variables to store defaults for question index, score, and timer
+let currentQuestionIndex = 0;
+let score = 0;
 
-// var countDownSec = 75;
-// var timer = document.getElementById('timer');
-// var interval;
 
-// function myFunction() {
-//   // add html for timer
-//   timer.innerText = "Time:" + countDownSec
-//   document.getElementsByClassName("card")[0].prepend(timer)
-//   interval = setInterval(setTime, 1000);
-//    // start timer
-//   // display question
+
+startBtn.addEventListener("click", startQuiz);
+// hides start card and replaces with question card
+function startQuiz() {
+    startTemp.classList.add('hidden')
+    questContainer.classList.remove('hidden')
+// startTemp.classList.add('hidden');
+// questContainer.classList.remove('hidden');
+// currentQuestionIndex = 0;
+// score = 0;
+// showQuestion()
+// 
+}
+
+// function showQuestion() {
+//     let currentQuestion = questions[currentQuestionIndex];
+//     let questionNo = currentQuestionIndex = 1;
+//     questEl.innerHTML = questionNo + "." + currentQuestion.question
+//     console.log('sup')
 // }
-
-
-// var questionEl = document.getElementById("question")
-// var answerButton = document.getElementById("answer-btns")
-
-
-// var currentQuestionIndex = 0;
-// var score = 0;
-
-
-
-// function setTime() {
-//     timer.innerText = "Time:" + countDownSec
-//    countDownSec--;
-//    if(countDownSec === 0) {
-//     clearInterval(interval);
-//    }
-// }  
-
-// // countDownSec = countDownSec - 10;
-// // countDownSec -= 10
