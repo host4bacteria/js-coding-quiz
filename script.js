@@ -1,10 +1,11 @@
 // selecting required html elements
-const startBtn = document.getElementById("startbtn");
-const questContainer = document.getElementById("questTemp");
-const questEl = document.getElementById("question");
-const answerbtn = document.getElementById("answer-btns");
-const startTemp = document.querySelector('.startCard');
-const answerTracker = document.getElementById("ansResult");
+var startBtn = document.getElementById("startbtn");
+var questContainer = document.getElementById("questTemp");
+var questEl = document.getElementById("question");
+var answerbtn = document.getElementById("answer-btns");
+var startTemp = document.querySelector('.startCard');
+var userScore = document.querySelector('.score')
+var answerTracker = document.getElementById("ansResult");
 
 
 
@@ -60,8 +61,8 @@ const questions = [
 ]
 
 // variables to store defaults for question index, score, and timer
-let currentQuestionIndex = 0;
-let score = 0;
+var currentQuestionIndex = 0;
+var userScore = 0;
 
 
 
@@ -90,7 +91,12 @@ function showNextQuestion() {
         if (answer.correct) {
             button.dataset.correct = answer.correct;
         }
-        button.addEventListener("click", selectedAnswer)
+        button.addEventListener("click", selectedAnswer);
+        button.addEventListener("click", () => {
+            currentQuestionIndex ++
+            showNextQuestion();
+        }
+        )
     });
 }
 // removes html answer buttons
@@ -105,9 +111,12 @@ function selectedAnswer(Event) {
     const selectedButton = Event.target
     const correct = selectedButton.dataset.correct === 'true'
     if (correct) {
-        score += 20;
-        ansResult.innerHTML = "Correct!"
+        userScore += 20;
+        ansResult.innerHTML = "Correct!" 
+        document.querySelector('.score').innerHTML = ('Score:' + ' ' + `${userScore}/100`)
     } else {
         ansResult.innerHTML = "Wrong!"
+        document.querySelector('.score').innerHTML = ('Score:' + ' ' + `${userScore}/100`)
     }
+    showNextQuestion();
 }
