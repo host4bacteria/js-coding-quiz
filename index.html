@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <header>
+        <!-- <div id="timer"></div> <div class="score"></div> -->
+    </header>
     <section class="card">
         <!-- <p id="timer"></p> -->
         <!-- starting page -->
@@ -18,15 +21,19 @@
                 incorrect answers will penalize your score/time <br> by ten seconds!</p>
             <button class="button" id="startbtn">Start Quiz</button>
         </div>
-<!-- questions page -->
-        <div id= "questTemp" class= "hidden">
+        <!-- questions page -->
+        <div id="questTemp" class="hidden">
+            <div id="timer"><p>time:</p></div> <div class="score"><p>score:</p></div>
             <h1 id="question">Question here</h1>
             <div id="answer-btns">
-              <button class="btn" id="b1"></button>
-              <button class="btn" id="b2"></button>
-              <button class="btn" id="b3"></button>
-              <button class="btn" id="b4"></button>
+                <button class="btn" id="b1"></button>
+                <button class="btn" id="b2"></button>
+                <button class="btn" id="b3"></button>
+                <button class="btn" id="b4"></button>
             </div>
+            <p>
+            <div id="ansResult"></div>
+            </p>
         </div>
 
     </section>
