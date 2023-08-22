@@ -4,8 +4,9 @@ var questContainer = document.getElementById("questTemp");
 var questEl = document.getElementById("question");
 var answerbtn = document.getElementById("answer-btns");
 var startTemp = document.querySelector('.startCard');
-var userScore = document.querySelector('.score')
+var userScore = document.querySelector('.score');
 var answerTracker = document.getElementById("ansResult");
+var timer = document.getElementById('timer');
 
 
 
@@ -63,6 +64,8 @@ const questions = [
 // variables to store defaults for question index, score, and timer
 var currentQuestionIndex = 0;
 var userScore = 0;
+var countDownSec = 75;
+var interval;
 
 
 
@@ -72,8 +75,10 @@ function startQuiz() {
     startTemp.classList.add('hidden')
     questContainer.classList.remove('hidden')
     currentQuestionIndex = 0;
-    score = 0;
+    userScore = 0;
+    setTime();
     showNextQuestion();
+
 
 }
 // inputs questions + answer buttons
@@ -93,7 +98,7 @@ function showNextQuestion() {
         }
         button.addEventListener("click", selectedAnswer);
         button.addEventListener("click", () => {
-            currentQuestionIndex ++
+            currentQuestionIndex++
             showNextQuestion();
         }
         )
@@ -112,11 +117,29 @@ function selectedAnswer(Event) {
     const correct = selectedButton.dataset.correct === 'true'
     if (correct) {
         userScore += 20;
-        ansResult.innerHTML = "Correct!" 
-        document.querySelector('.score').innerHTML = ('Score:' + ' ' + `${userScore}/100`)
+        ansResult.innerHTML = "Correct!"
+        document.querySelector('.score').innerHTML = ('Score:' + ' ' + `${userScore}/100`);
     } else {
+        countDownSec -= 15;
         ansResult.innerHTML = "Wrong!"
-        document.querySelector('.score').innerHTML = ('Score:' + ' ' + `${userScore}/100`)
+        document.querySelector('.score').innerHTML = ('Score:' + ' ' + `${userScore}/100`);
     }
     showNextQuestion();
+}
+
+function setTime() {
+    timer = setInterval(function () {
+        document.getElementById("timer").innerHTML = ("Time: " + countDownSec);
+        countDownSec--;
+        if (countDownSec === -1) {
+            (console.log("out of time"))
+            clearInterval(timer)
+            startTemp.classList.remove('hidden')
+            questContainer.classList.add('hidden')
+            document.getElementsByTagName('h1')[0].textContent = "OUT OF TIME"
+            document.getElementsByTagName('p')[0].textContent = "Click the button below to try again!"
+            startBtn.textContent = "RESTART"
+        }
+        
+    }, 1000);
 }
