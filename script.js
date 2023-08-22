@@ -7,8 +7,7 @@ var startTemp = document.querySelector('.startCard');
 var userScore = document.querySelector('.score');
 var answerTracker = document.getElementById("ansResult");
 var timer = document.getElementById('timer');
-
-
+const resultsPage = document.getElementById("resultsPage");
 
 // array containing questions
 const questions = [
@@ -67,6 +66,31 @@ var userScore = 0;
 var countDownSec = 75;
 var interval;
 
+// function made to clear timer and score after restart button
+function resetTimer() {
+    userScore = 0;
+    countDownSec = 75;
+}
+// creates a state for when user runs out of time
+function failTimerState() {
+    clearInterval(timer)
+    startTemp.classList.remove('hidden')
+    questContainer.classList.add('hidden')
+    document.getElementsByTagName('h1')[0].textContent = "OUT OF TIME"
+    document.getElementsByTagName('p')[0].textContent = "Click the button below to try again!"
+    startBtn.textContent = "RESTART"
+}
+
+//timer function
+function setTime() {
+    timer = setInterval(function () {
+        document.getElementById("timer").innerHTML = ("Time: " + countDownSec);
+        countDownSec--;
+        if (countDownSec === -1) {
+            failTimerState();
+        }
+    }, 1000)
+}
 
 
 startBtn.addEventListener("click", startQuiz);
@@ -76,11 +100,11 @@ function startQuiz() {
     questContainer.classList.remove('hidden')
     currentQuestionIndex = 0;
     userScore = 0;
+    resetTimer();
     setTime();
     showNextQuestion();
-
-
 }
+
 // inputs questions + answer buttons
 function showNextQuestion() {
     resetState()
@@ -98,12 +122,23 @@ function showNextQuestion() {
         }
         button.addEventListener("click", selectedAnswer);
         button.addEventListener("click", () => {
-            currentQuestionIndex++
-            showNextQuestion();
-        }
-        )
+            currentQuestionIndex++;
+            if(currentQuestionIndex < questions.length) {
+                 showNextQuestion();
+            }else{
+            showResultsPage();
+         }
+        })
     });
 }
+ 
+// function showResultsPage(){
+//     clearInterval(timer);
+//     resultsPage.classList.remove('hidden');
+//     questContainer.classList.add('hidden');
+//    //resultsPage.classList.add('show');
+// }
+
 // removes html answer buttons
 function resetState() {
     while (answerbtn.firstChild) {
@@ -111,6 +146,7 @@ function resetState() {
             (answerbtn.firstChild)
     }
 }
+
 // added function and event listener for answer buttons to count score and display whether answer was correct
 function selectedAnswer(Event) {
     const selectedButton = Event.target
@@ -127,19 +163,33 @@ function selectedAnswer(Event) {
     showNextQuestion();
 }
 
-function setTime() {
-    timer = setInterval(function () {
-        document.getElementById("timer").innerHTML = ("Time: " + countDownSec);
-        countDownSec--;
-        if (countDownSec === -1) {
-            (console.log("out of time"))
-            clearInterval(timer)
-            startTemp.classList.remove('hidden')
-            questContainer.classList.add('hidden')
-            document.getElementsByTagName('h1')[0].textContent = "OUT OF TIME"
-            document.getElementsByTagName('p')[0].textContent = "Click the button below to try again!"
-            startBtn.textContent = "RESTART"
-        }
-        
-    }, 1000);
+function showResultsPage(){
+    clearInterval(timer);
+    // resultsPage.classList.remove('hidden');
+    // $("questTemp").replaceWith("#resultsPage");
+    // questContainer.classList.add('hidden');
+   //resultsPage.classList.add('show');
 }
+
+
+
+// // creates a state for when user runs out of time
+// function failTimerState() {
+//     clearInterval(timer)
+//     startTemp.classList.remove('hidden')
+//     questContainer.classList.add('hidden')
+//     document.getElementsByTagName('h1')[0].textContent = "OUT OF TIME"
+//     document.getElementsByTagName('p')[0].textContent = "Click the button below to try again!"
+//     startBtn.textContent = "RESTART"
+// }
+
+// //timer function
+// function setTime() {
+//     timer = setInterval(function () {
+//         document.getElementById("timer").innerHTML = ("Time: " + countDownSec);
+//         countDownSec--;
+//         if (countDownSec === -1) {
+//             failTimerState();
+//         }
+//     }, 1000)
+// }

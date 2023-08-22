@@ -23,7 +23,9 @@ justify-content: center;
 .hidden {
     display: none;
 }
-
+/* .show {
+    display: inline-block;
+} */
 
 /* .startcard{
 display: flex;
