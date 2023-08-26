@@ -25,7 +25,7 @@
         <!-- questions page -->
         <div id="questTemp" class="hidden">
             <div id="timer">
-                <p>time: 0</p>
+                <p>time: 0</p> 
             </div>
             <div class="score">
                 <p>score: 0/100</p>
@@ -38,19 +38,24 @@
                 <button class="btn" id="b4"></button>
             </div>
             <div id="ansResult"></div>
-            <!-- results/high score page -->
-            <div id="resultsPage"  class="hidden">
-                <h1>All Done! </h1>
-                <p> Your final score is: <br>
-                    <label for="Name">Name:</label>
-                    <input type="text" id="Name" name="Name" placeholder="Jane Doe">
-                </p>
-            </div>
-
         </div>
-
+         <!-- results/user input page-->
+        <div id="resultsPage" class="hidden">
+            <h1>All Done! </h1>
+            <div id="finalScore"> Final Score: </div> <br>
+            <form id="scoreSubmission">
+                <label for="Name">Name:</label>
+                <input type="text" id="Name" name="Name" placeholder="username">
+                 <input id="subBtn" type="submit" value="Submit" onclick="saveHighScore(event)" disabled="disabled">
+            </form>
+        </div>
+        <div id="leaderboard" class="hidden">
+            <h1>High Scores</h1>
+            <ul id="highScoreslist"></ul>
+            <button class="button" id="startbtn">Restart</button>
+        </div>
     </section>
-</body>
-<script src="script.js"></script>
-
-</html>
+    </body>
+    <script src="script.js"></script>
+    
+    </html>
