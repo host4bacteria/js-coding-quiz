@@ -188,15 +188,18 @@ document.getElementById('scoreSubmission').addEventListener("submit", function (
 
 
 
-var highScores = []; //JSON.parse(localStorage.getItem("userHighScore")) || [];
 // // function that saves user Input for leaderboard
 function saveHighScore() {
-    var userHighScore = {
+    var userHighScore = 
+    [{
         score: userScore,
         user: nameInput.value
-    }
-    localStorage.setItem("userHighScore", JSON.stringify(userHighScore)) || [],
-    highScores.push(userHighScore);
+    }]
+    {
+    var currentScores =  JSON.parse(localStorage.getItem("userHighScore"));
+    userHighScore.push(currentScores);
+}
+    localStorage.setItem("currentScores", JSON.stringify(currentScores)) || [];
     }
 
 
