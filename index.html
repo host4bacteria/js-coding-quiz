@@ -1,61 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="jquery-3.6.4.min.js"></script>
     <title>Multiple Choice Coding Quiz</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <!-- <div id="timer"></div> <div class="score"></div> -->
+      <!-- <div id="timer"></div> <div class="score"></div> -->
     </header>
     <section class="card">
-        <!-- <p id="timer"></p> -->
-        <!-- starting page -->
-        <div class="startCard">
-            <h1>Coding Quiz Challenge</h1>
-            <p>Try to answer the following code-related questions within the time limit. <br> Keep in mind that
-                incorrect answers will penalize your score/time <br> by ten seconds!</p>
-            <button class="button" id="startbtn">Start Quiz</button>
+      <!-- <p id="timer"></p> -->
+      <!-- starting page -->
+      <div class="startCard">
+        <h1>Coding Quiz Challenge</h1>
+        <p>
+          Try to answer the following code-related questions within the time
+          limit. <br />
+          Keep in mind that incorrect answers will penalize your score/time
+          <br />
+          by ten seconds!
+        </p>
+        <button class="button" id="startbtn">Start Quiz</button>
+      </div>
+      <!-- questions page -->
+      <div id="questTemp" class="hidden">
+        <div id="timer">
+          <p>time: 0</p>
         </div>
-        <!-- questions page -->
-        <div id="questTemp" class="hidden">
-            <div id="timer">
-                <p>time: 0</p> 
-            </div>
-            <div class="score">
-                <p>score: 0/100</p>
-            </div>
-            <h1 id="question">Question here</h1>
-            <div id="answer-btns">
-                <button class="btn" id="b1"></button>
-                <button class="btn" id="b2"></button>
-                <button class="btn" id="b3"></button>
-                <button class="btn" id="b4"></button>
-            </div>
-            <div id="ansResult"></div>
+        <div class="score">
+          <p>score: 0/100</p>
         </div>
-         <!-- results/user input page-->
-        <div id="resultsPage" class="hidden">
-            <h1>All Done! </h1>
-            <div id="finalScore"> Final Score: </div> <br>
-            <form id="scoreSubmission">
-                <label for="Name">Name:</label>
-                <input type="text" id="Name" name="Name" placeholder="username">
-                 <input id="subBtn" type="submit" value="Submit" onclick="saveHighScore(event)" disabled="disabled">
-            </form>
+        <h1 id="question">Question here</h1>
+        <div id="answer-btns">
+          <button class="btn" id="b1"></button>
+          <button class="btn" id="b2"></button>
+          <button class="btn" id="b3"></button>
+          <button class="btn" id="b4"></button>
         </div>
-        <div id="leaderboard" class="hidden">
-            <h1>High Scores</h1>
-            <ul id="highScoreslist"></ul>
-            <button class="button" id="startbtn">Restart</button>
-        </div>
+        <div id="ansResult"></div>
+      </div>
+      <!-- results/user input page-->
+      <div id="resultsPage" class="hidden">
+        <h1>All Done!</h1>
+        <div id="finalScore">Final Score:</div>
+        <br />
+        <form id="scoreSubmission">
+          <label for="Name">Name:</label>
+          <input type="text" id="Name" name="Name" placeholder="username" />
+          <input
+            id="subBtn"
+            type="submit"
+            value="Submit"
+            onclick="saveHighScore(event)"
+            disabled="disabled"
+          />
+        </form>
+      </div>
+      <div id="leaderboard" class="hidden">
+        <h1>High Scores</h1>
+       <p id="highScoresList"></p>
+        <button class="button" id="startbtn">Restart</button>
+      </div>
     </section>
-    </body>
-    <script src="script.js"></script>
-    
-    </html>
+  </body>
+  <script src="script.js"></script>
+</html>

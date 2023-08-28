@@ -8,8 +8,9 @@ var answerTracker = document.getElementById("ansResult");
 var timer = document.getElementById("timer");
 var resultsPage = document.getElementById("resultsPage");
 var nameInput = document.getElementById("Name");
-var submitter = document.getElementById('subBtn');
-//var mostRecentScore = localStorage.getItem("mostRecentScore");
+var submitter = document.getElementById("subBtn");
+var highScoreList = document.getElementById("highScoresList")
+var leaderboard = document.getElementById("leaderboard")
 // array containing questions
 const questions = [
   {
@@ -137,7 +138,6 @@ function showNextQuestion() {
       if (currentQuestionIndex < questions.length) {
         showNextQuestion();
       } else {
-        //localStorage.setItem('mostRecentScore', userScore);
         showResultsPage();
       }
     });
@@ -148,12 +148,9 @@ function showResultsPage() {
   clearInterval(timer);
   resultsPage.classList.remove("hidden");
   questContainer.classList.add("hidden");
- // localStorage.setItem('mostRecentScore', `${userScore}/100`);
   document.getElementById("finalScore").innerHTML =
     " Final Score:" + " " + `${userScore}/100`;
-    //console.log(mostRecentScore)
 }
-
 
 // added function and event listener for answer buttons to count score and display whether answer was correct
 function selectedAnswer(Event) {
@@ -173,35 +170,40 @@ function selectedAnswer(Event) {
 }
 
 // event listener enables submit btn once it recieves user input
-nameInput.addEventListener('keyup', () => {
-submitter.disabled = !nameInput.value;
-})
-
-
-// // event listener that adds functionality to 'submit' button
-document.getElementById('scoreSubmission').addEventListener("submit", function (event) {
-    event.preventDefault();
-    saveHighScore;
-   // displayHighScores();
+nameInput.addEventListener("keyup", () => {
+  submitter.disabled = !nameInput.value;
 });
 
-
-
+// // event listener that adds functionality to 'submit' button
+document
+  .getElementById("scoreSubmission")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    saveHighScore;
+    displayHighScores();
+  });
 
 // // function that saves user Input for leaderboard
 function saveHighScore() {
-    var userHighScore = 
-    [{
-        score: userScore,
-        user: nameInput.value
-    }]
+  var userHighScore = 
     {
-    var currentScores =  JSON.parse(localStorage.getItem("currentScores")) || [];
+      score: userScore,
+      user: nameInput.value,
+    };
+  {
+    var currentScores = JSON.parse(localStorage.getItem("currentScores")) || [];
     currentScores.push(userHighScore);
-}
-    localStorage.setItem("currentScores", JSON.stringify(currentScores));
-    }
-
-
-
-
+  }
+  localStorage.setItem("currentScores", JSON.stringify(currentScores))
+};
+// function calls data from local storage and dispklays on screen
+function displayHighScores() {
+    document.getElementById('Name').clear
+    resultsPage.classList.add("hidden");
+    leaderboard.classList.remove("hidden");
+     var highScore = JSON.parse(localStorage.getItem("currentScores")) || [];
+     console.log( `${highScore.user}`)
+    document.getElementById("highScoresList").innerHTML +=
+      ` Name:  ${highScore.user} | Score: ${highScore.score}`
+      
+  }
