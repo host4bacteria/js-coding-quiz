@@ -9,8 +9,8 @@ var timer = document.getElementById("timer");
 var resultsPage = document.getElementById("resultsPage");
 var nameInput = document.getElementById("Name");
 var submitter = document.getElementById("subBtn");
-var highScoreList = document.getElementById("highScoresList")
-var leaderboard = document.getElementById("leaderboard")
+var highScoreList = document.getElementById("highScoresList");
+var leaderboard = document.getElementById("leaderboard");
 // array containing questions
 const questions = [
   {
@@ -121,6 +121,7 @@ function showNextQuestion() {
   let questionNo = currentQuestionIndex + 1;
   console.log(currentQuestion);
   questEl.innerHTML = questionNo + "." + currentQuestion.question;
+
   // functions replaces static answer buttons from HTML with JS answer buttons
   currentQuestion.answers.forEach((answer) => {
     const button = document.createElement("button");
@@ -185,25 +186,25 @@ document
 
 // // function that saves user Input for leaderboard
 function saveHighScore() {
-  var userHighScore = 
-    {
-      score: userScore,
-      user: nameInput.value,
-    };
+  var userHighScore = {
+    score: userScore,
+    user: nameInput.value,
+  };
   {
     var currentScores = JSON.parse(localStorage.getItem("currentScores")) || [];
     currentScores.push(userHighScore);
   }
-  localStorage.setItem("currentScores", JSON.stringify(currentScores))
-};
+  localStorage.setItem("currentScores", JSON.stringify(currentScores));
+}
 // function calls data from local storage and dispklays on screen
 function displayHighScores() {
-    document.getElementById('Name').clear
-    resultsPage.classList.add("hidden");
-    leaderboard.classList.remove("hidden");
-     var highScore = JSON.parse(localStorage.getItem("currentScores")) || [];
-     console.log( `${highScore.user}`)
-    document.getElementById("highScoresList").innerHTML +=
-      ` Name:  ${highScore.user} | Score: ${highScore.score}`
-      
+  document.getElementById("Name").clear;
+  resultsPage.classList.add("hidden");
+  leaderboard.classList.remove("hidden");
+  var highScore = JSON.parse(localStorage.getItem("currentScores")) || [];
+  for (let i = 0; i < highScore.length; i++) {
+    document.getElementById(
+      "highScoresList"
+    ).innerHTML += ` Name:  ${highScore[i].user} | Score: ${highScore[i].score}`;
   }
+}
