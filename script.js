@@ -181,7 +181,7 @@ submitter.disabled = !nameInput.value;
 // // event listener that adds functionality to 'submit' button
 document.getElementById('scoreSubmission').addEventListener("submit", function (event) {
     event.preventDefault();
-    saveHighScore();
+    saveHighScore;
    // displayHighScores();
 });
 
@@ -196,10 +196,10 @@ function saveHighScore() {
         user: nameInput.value
     }]
     {
-    var currentScores =  JSON.parse(localStorage.getItem("userHighScore"));
-    userHighScore.push(currentScores);
+    var currentScores =  JSON.parse(localStorage.getItem("currentScores")) || [];
+    currentScores.push(userHighScore);
 }
-    localStorage.setItem("currentScores", JSON.stringify(currentScores)) || [];
+    localStorage.setItem("currentScores", JSON.stringify(currentScores));
     }
 
 
