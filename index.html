@@ -16,7 +16,7 @@
       <!-- <p id="timer"></p> -->
       <!-- starting page -->
       <div class="startCard">
-        <h1>Coding Quiz Challenge</h1>
+        <h1 id="starterHeader">Coding Quiz Challenge</h1>
         <p id="startText"> 
           Try to answer the following code-related questions within the time
           limit. <br />
@@ -45,7 +45,7 @@
       </div>
       <!-- results/user input page-->
       <div id="resultsPage" class="hidden">
-        <h1>All Done!</h1>
+        <h1 id="resultsHeader">All Done!</h1>
         <div id="finalScore">Final Score:</div>
         <br />
         <form id="scoreSubmission">
@@ -61,8 +61,8 @@
         </form>
       </div>
       <div id="leaderboard" class="hidden">
-        <h1>High Scores</h1>
-       <p id="highScoresList"></p>
+        <h1 id="ldrHeader">High Scores</h1>
+       <ul id="highScoresList"></ul>
         <button onclick="window.location.assign('/')" class="button" id="goHome">Restart</button>
       </div>
     </section>

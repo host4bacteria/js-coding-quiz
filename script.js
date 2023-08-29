@@ -205,7 +205,6 @@ function displayHighScores() {
   for (let i = 0; i < highScore.length; i++) {
     document.getElementById(
       "highScoresList"
-    ).innerHTML += ` Name:  ${highScore[i].user} | Score: ${highScore[i].score}`;
+    ).innerHTML += ` Name:  ${highScore[i].user} | Score: ${highScore[i].score} <br>`;
   }
 }
-

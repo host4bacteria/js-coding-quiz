@@ -25,6 +25,7 @@ padding-left: 70vh;
 .card{
     display: flex;
     justify-content: center;
+    flex-direction: row;
     text-align: center;
     border: 2px solid black;
      /* padding-top: 12vh; */
@@ -40,32 +41,73 @@ padding: 3vh;
 
  #answer-btns { 
   display: flex;
-  position: absolute;
   flex-direction: column;
   justify-content: space-around;
   width: 30vh;
+  height: 30vh;
   row-gap: 3vh;
-  padding-top: 5vh;
+  padding-top: 15vh;
   padding-left: 4em;
-   
 }
 
 #question {
+max-height: 10vh;
 display: flex;
 position: relative;
-align-content: center;
-justify-content: baseline;
+align-items: center;
+justify-content: center;
+line-height: normal;
 }
 
-.btn{
+.btn, .button, #subBtn {
     font-size: large;
     background-color: rgb(54 28 117);
     color: rgb(255 255 255);
     border-radius: .5em;
     padding: .5em;
 }
+ 
 
+
+#subBtn {
+    font-size: small;
+    padding: .3em
+}
+
+
+#finalScore {
+    font-size: larger;
+    padding-top: 1.5vh;
+}
+
+ #starterHeader, #resultsHeader, #ldrHeader {
+    font-size: 2em;
+    padding-bottom: 1.5vh;
+}
 
 .hidden {
     display: none;
+}
+
+#resultsPage, .startCard, #leaderboard {
+    padding-top: 20vh;
+    flex-direction: column;
+    line-height: 2.5vh;
+}
+
+#ansResult{
+    font-style: oblique;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 15vh;
+    font-size: large;
+}
+
+#highScoresList {
+    padding: 3vh;
+    font-size: large;
+   font-style: oblique;
+}
+#ldrHeader{
+    border-bottom: solid;
 }
