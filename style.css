@@ -11,27 +11,61 @@ display: flex;
 justify-content: center;
 }
 
+ #timer {
+display: flex;
+position: absolute;
+justify-content: flex-end;
+padding-left: 70vh;
+}
+
+.score {
+    padding-right: 70vh;
+}
+
 .card{
     display: flex;
     justify-content: center;
     text-align: center;
     border: 2px solid black;
-    padding-top: 15vh;
+     /* padding-top: 12vh; */
     height: 65vh;
     width: 90vh;
+    line-height: 5vh;
 }
+
+#startText{
+line-height: normal;
+padding: 3vh;
+}
+
+ #answer-btns { 
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30vh;
+  row-gap: 3vh;
+  padding-top: 5vh;
+  padding-left: 4em;
+   
+}
+
+#question {
+display: flex;
+position: relative;
+align-content: center;
+justify-content: baseline;
+}
+
+.btn{
+    font-size: large;
+    background-color: rgb(54 28 117);
+    color: rgb(255 255 255);
+    border-radius: .5em;
+    padding: .5em;
+}
+
+
 .hidden {
     display: none;
 }
-/* .show {
-    display: inline-block;
-} */
-
-/* .startcard{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding-top: 20%;
-text-align: center;
-} */

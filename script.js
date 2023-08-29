@@ -14,7 +14,7 @@ var leaderboard = document.getElementById("leaderboard");
 // array containing questions
 const questions = [
   {
-    question: "Commonly used data types DO NOT include:",
+    question: " Commonly used data types DO NOT include:",
     answers: [
       { text: "strings", correct: false },
       { text: "booleans", correct: false },
@@ -23,7 +23,7 @@ const questions = [
     ],
   },
   {
-    question: "The condition in an if / else statement is enclosed with ____.",
+    question: " The condition in an if / else statement is enclosed with ____.",
     answers: [
       { text: "quotes", correct: false },
       { text: "curly brackets", correct: true },
@@ -32,9 +32,9 @@ const questions = [
     ],
   },
   {
-    question: "Arrays in JavaScript can be used to store ____.",
+    question: " Arrays in JavaScript can be used to store ____.",
     answers: [
-      { text: "numbers andt strings", correct: false },
+      { text: "numbers & strings", correct: false },
       { text: "other arrays", correct: false },
       { text: "booleans", correct: false },
       { text: "all of the above", correct: true },
@@ -42,7 +42,7 @@ const questions = [
   },
   {
     question:
-      "String values must be enclosed within ____ when beaing assigned to variables.",
+      " String values must be enclosed within ____ when being <br> assigned to variables.",
     answers: [
       { text: "comnmas", correct: false },
       { text: "curly brackets", correct: false },
@@ -52,7 +52,7 @@ const questions = [
   },
   {
     question:
-      "A very useful tool used during development and debugging for printing content to the debugger is:",
+      " A very useful tool used during development and debugging for printing content to the debugger is:",
     answers: [
       { text: "JavaScript", correct: false },
       { text: "terminal/bash", correct: false },
@@ -208,3 +208,4 @@ function displayHighScores() {
     ).innerHTML += ` Name:  ${highScore[i].user} | Score: ${highScore[i].score}`;
   }
 }
+
