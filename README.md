@@ -26,7 +26,7 @@ THEN I can save my initials and score
 
 
 ## Deployed Application
-
+[ Click Here to View Deployed Website](https://host4bacteria.github.io/js-coding-quiz/)
 
 ## License
 

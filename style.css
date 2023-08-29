@@ -111,3 +111,47 @@ line-height: normal;
 #ldrHeader{
     border-bottom: solid;
 }
+
+/* media query for smaller devices */
+@media screen and (max-width: 620px) {
+
+    .card {
+        border-style: none;
+        max-width: 80%;
+        font-size: 50%;
+    }
+
+    #ansResults {
+        font-size: 80%;
+    }
+
+  
+    #highScoresList {
+        font-size: 2vh;
+    }
+
+    .button {
+       max-block-size: 20%; 
+    }
+
+    .btn {
+     max-block-size: 70%;
+    font-size: 40%;
+    }
+
+    #answer-btns {
+        width: 70%;
+        padding-left: 30%;
+        padding-top: 5%;
+    }
+
+    #question {
+        max-width: 70%;
+        padding-left: 30%;
+    }
+
+    #startText, #finalScore {
+        padding: 5%;
+        font-size: 2vh;
+    }
+}
