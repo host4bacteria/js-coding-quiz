@@ -1,45 +1,45 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-min-height: 50vh;
-margin-top: 20vh;
-display: flex;
-justify-content: center;
+  min-height: 50vh;
+  margin-top: 20vh;
+  display: flex;
+  justify-content: center;
 }
 
- #timer {
-display: flex;
-position: absolute;
-justify-content: flex-end;
-padding-left: 70vh;
+#timer {
+  display: flex;
+  position: absolute;
+  justify-content: flex-end;
+  padding-left: 70vh;
 }
 
 .score {
-    padding-right: 70vh;
+  padding-right: 70vh;
 }
 
-.card{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    text-align: center;
-    border: 2px solid black;
-     /* padding-top: 12vh; */
-    height: 65vh;
-    width: 90vh;
-    line-height: 5vh;
+.card {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+  border: 2px solid black;
+  /* padding-top: 12vh; */
+  height: 65vh;
+  width: 90vh;
+  line-height: 5vh;
 }
 
-#startText{
-line-height: normal;
-padding: 3vh;
+#startText {
+  line-height: normal;
+  padding: 3vh;
 }
 
- #answer-btns { 
+#answer-btns {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -51,107 +51,109 @@ padding: 3vh;
 }
 
 #question {
-max-height: 10vh;
-display: flex;
-position: relative;
-align-items: center;
-justify-content: center;
-line-height: normal;
+  max-height: 10vh;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
 }
 
-.btn, .button, #subBtn {
-    font-size: large;
-    background-color: rgb(54 28 117);
-    color: rgb(255 255 255);
-    border-radius: .5em;
-    padding: .5em;
+.btn,
+.button,
+#subBtn {
+  font-size: large;
+  background-color: rgb(54 28 117);
+  color: rgb(255 255 255);
+  border-radius: 0.5em;
+  padding: 0.5em;
 }
- 
-
 
 #subBtn {
-    font-size: small;
-    padding: .3em
+  font-size: small;
+  padding: 0.3em;
 }
-
 
 #finalScore {
-    font-size: larger;
-    padding-top: 1.5vh;
+  font-size: larger;
+  padding-top: 1.5vh;
 }
 
- #starterHeader, #resultsHeader, #ldrHeader {
-    font-size: 2em;
-    padding-bottom: 1.5vh;
+#starterHeader,
+#resultsHeader,
+#ldrHeader {
+  font-size: 2em;
+  padding-bottom: 1.5vh;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
-#resultsPage, .startCard, #leaderboard {
-    padding-top: 20vh;
-    flex-direction: column;
-    line-height: 2.5vh;
+#resultsPage,
+.startCard,
+#leaderboard {
+  padding-top: 20vh;
+  flex-direction: column;
+  line-height: 2.5vh;
 }
 
-#ansResult{
-    font-style: oblique;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-top: 15vh;
-    font-size: large;
+#ansResult {
+  font-style: oblique;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 15vh;
+  font-size: large;
 }
 
 #highScoresList {
-    padding: 3vh;
-    font-size: large;
-   font-style: oblique;
+  padding: 3vh;
+  font-size: large;
+  font-style: oblique;
 }
-#ldrHeader{
-    border-bottom: solid;
+#ldrHeader {
+  border-bottom: solid;
 }
 
 /* media query for smaller devices */
 @media screen and (max-width: 620px) {
+  .card {
+    border-style: none;
+    max-width: 80%;
+    font-size: 50%;
+  }
 
-    .card {
-        border-style: none;
-        max-width: 80%;
-        font-size: 50%;
-    }
+  #ansResults {
+    font-size: 80%;
+  }
 
-    #ansResults {
-        font-size: 80%;
-    }
+  #highScoresList {
+    font-size: 2vh;
+  }
 
-  
-    #highScoresList {
-        font-size: 2vh;
-    }
+  .button {
+    max-block-size: 20%;
+  }
 
-    .button {
-       max-block-size: 20%; 
-    }
-
-    .btn {
-     max-block-size: 70%;
+  .btn {
+    max-block-size: 70%;
     font-size: 40%;
-    }
+  }
 
-    #answer-btns {
-        width: 70%;
-        padding-left: 30%;
-        padding-top: 5%;
-    }
+  #answer-btns {
+    width: 70%;
+    padding-left: 30%;
+    padding-top: 5%;
+  }
 
-    #question {
-        max-width: 70%;
-        padding-left: 30%;
-    }
+  #question {
+    max-width: 70%;
+    padding-left: 30%;
+  }
 
-    #startText, #finalScore {
-        padding: 5%;
-        font-size: 2vh;
-    }
+  #startText,
+  #finalScore {
+    padding: 5%;
+    font-size: 2vh;
+  }
 }

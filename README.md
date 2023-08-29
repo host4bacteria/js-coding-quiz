@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a timed multiple choice coding quiz to test user's knowledge and coding skills. 
+This is a timed multiple choice coding quiz to test user's knowledge and coding skills.
 
 ## User Story
 
@@ -24,9 +24,11 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and score
 
-
 ## Deployed Application
+
 [ Click Here to View Deployed Website](https://host4bacteria.github.io/js-coding-quiz/)
+
+![Homepage Screenshot](assets/deployedappquiz.png)
 
 ## License
 
