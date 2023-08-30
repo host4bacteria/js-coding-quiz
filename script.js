@@ -133,7 +133,6 @@ function showNextQuestion() {
     button.addEventListener("click", () => {
       currentQuestionIndex++;
       //questionNo++;
-      console.log(questionNo);
       if (currentQuestionIndex < questions.length) {
         showNextQuestion();
       } else {
@@ -196,7 +195,6 @@ function saveHighScore() {
 }
 // function calls data from local storage and dispklays on screen
 function displayHighScores() {
-  document.getElementById("Name").clear;
   resultsPage.classList.add("hidden");
   leaderboard.classList.remove("hidden");
   var highScore = JSON.parse(localStorage.getItem("currentScores")) || [];
@@ -213,4 +211,8 @@ function restart() {
   leaderboard.classList.add("hidden");
   document.querySelector(".score").innerHTML = "Score:" + " " + `0/100`;
   startQuiz();
+}
+// clears input box after submission
+function clearInput() {
+  document.getElementById("scoreSubmission").reset();
 }
