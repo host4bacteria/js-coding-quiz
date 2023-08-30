@@ -101,7 +101,6 @@ function resetState() {
     answerbtn.removeChild(answerbtn.firstChild);
   }
 }
-
 startBtn.addEventListener("click", startQuiz);
 // hides start card and replaces with question card
 function startQuiz() {
@@ -119,7 +118,6 @@ function showNextQuestion() {
   resetState();
   let currentQuestion = questions[currentQuestionIndex];
   let questionNo = currentQuestionIndex + 1;
-  console.log(currentQuestion);
   questEl.innerHTML = questionNo + "." + currentQuestion.question;
 
   // functions replaces static answer buttons from HTML with JS answer buttons
@@ -207,4 +205,12 @@ function displayHighScores() {
       "highScoresList"
     ).innerHTML += ` Name:  ${highScore[i].user} | Score: ${highScore[i].score} <br>`;
   }
+}
+
+document.getElementById("restartbtn").addEventListener("click", restart);
+
+function restart() {
+  leaderboard.classList.add("hidden");
+  document.querySelector(".score").innerHTML = "Score:" + " " + `0/100`;
+  startQuiz();
 }
